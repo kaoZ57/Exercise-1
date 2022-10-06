@@ -18,7 +18,7 @@ namespace Exercise_1
             int paid = 0;
             int change = 0;
 
-
+            //รับค่าจำนวนเงินแต่ละแบบ
             Console.Write("Cash 1000 = ");
             cashList.Add(new Cash(1000, Int32.Parse(Console.ReadLine())));
             Console.Write("Cash 500 = ");
