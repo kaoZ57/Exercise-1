@@ -42,9 +42,10 @@ namespace Exercise_1
             cashList.Add(new Cash(5, 500));
             cashList.Add(new Cash(1, 1000));*/
 
-
+            //หาค่าเงินรวมทั้งหมด
             cashList.ForEach(item => { amount_total += item.amount * item.type; });
 
+            //แสดงค่าเงิน
             foreach (Cash item in cashList)
             {
                 Console.WriteLine(item.ToString() + " left " + item.amount * item.type);
@@ -52,6 +53,7 @@ namespace Exercise_1
 
             Console.WriteLine("\namount_total: " + amount_total);
 
+        //กรอกเงินทอนที่
         UP:
             Console.Write("change = ");
             string InputNum = Console.ReadLine();
@@ -72,9 +74,11 @@ namespace Exercise_1
 
             Console.WriteLine("\nWant to change: " + change);
 
+            //หาค่าเงินคงเหลือ
             paid = amount_total - change;
             Console.WriteLine("\npaid: " + paid);
 
+            //หาค่าเงินเห็นแต่ลำจำนวนของเงินทอน
             foreach (Cash item in cashList)
             {
                 int i = 0;
@@ -86,6 +90,8 @@ namespace Exercise_1
                 changeList.Add(new Cash(item.type, i));
                 //Console.WriteLine(change + " " + item.type + " " + i);
             }
+
+            //แสดงผลลัพธ์
             Console.WriteLine("\ndeducted money");
             foreach (Cash item in changeList)
             {
